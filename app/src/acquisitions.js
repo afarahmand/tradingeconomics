@@ -89,25 +89,3 @@ function getYears(apiResponse) {
     record["DateTime"].slice(0, 4)
   ))
 }
-
-
-// new Chart(canvas, {
-//   type: 'line',
-//   data: {
-//     labels: [],
-//     datasets: []
-//   },
-//   options: {
-//     elements: {
-//       point: {
-//         radius: 0
-//       }
-//     },
-//     responsive: false,
-//     title: {
-//       display: true,
-//       fontSize: 32,
-//       text: 'Front-Month Futures Contract Price Change [%]'
-//     }
-//   }
-// });
