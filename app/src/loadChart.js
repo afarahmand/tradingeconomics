@@ -13,7 +13,7 @@ import Chart from 'chart.js/auto';
     // getPopulationData(countries.join(", "), "placeholder_api_key").then(
       apiResponse => {
         new Chart(
-          document.getElementById('acquisitions'),
+          document.getElementById('chartContainer'),
           {
             type: 'line',
             data: {
