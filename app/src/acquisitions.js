@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 (async function() {
   document.addEventListener("DOMContentLoaded", () => {
     // Free accounts only support Mexico, Sweden, Thailand, New Zealand
-    const countries = ["Mexico", "Sweden"];
+    const countries = ["Mexico", "New Zealand", "Sweden", "Thailand"];
 
     // ToDo:
     // Move API KEY to ENV?
