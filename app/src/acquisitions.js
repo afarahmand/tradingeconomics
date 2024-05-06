@@ -9,7 +9,6 @@ import Chart from 'chart.js/auto';
     // Move API KEY to ENV?
     // Handle API error
     // Refactor maybe into separate files
-    // Add units to chart
     // Tests?
 
     // getPopulationData(countries.join(", "), "placeholder_api_key").then(
@@ -23,16 +22,24 @@ import Chart from 'chart.js/auto';
               datasets: getCountryDatasets(apiResponse, countries)
             },
             options: {
-              elements: {
-                point: {
-                  radius: 0
-                }
-              },
-              // responsive: false,
               title: {
                 display: true,
                 fontSize: 32,
                 text: 'Population by Year'
+              },
+              scales: {
+                x: {
+                  title: {
+                    display: true,
+                    text: 'Year'
+                  }
+                },
+                y: {
+                  title: {
+                    display: true,
+                    text: 'Population [Millions]'
+                  }
+                }
               }
             }
           }
