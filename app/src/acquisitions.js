@@ -2,21 +2,17 @@ import Chart from 'chart.js/auto';
 
 (async function() {
   document.addEventListener("DOMContentLoaded", () => {
-    const data = [
-      { year: 2010, count: 10 },
-      { year: 2011, count: 20 },
-      { year: 2012, count: 15 },
-      { year: 2013, count: 25 },
-      { year: 2014, count: 22 },
-      { year: 2015, count: 30 },
-      { year: 2016, count: 28 },
-    ];
-
     // Free accounts only support Mexico, Sweden, Thailand, New Zealand
     const countries = ["Mexico", "Sweden"];
 
-    // ToDo: Move API KEY to ENV?
-    getPopulationData(countries.join(", "), "placeholder_api_key").then(
+    // ToDo:
+    // Move API KEY to ENV?
+    // Handle API error
+    // Refactor maybe into separate files
+    // Add units to chart
+    // Tests?
+
+    // getPopulationData(countries.join(", "), "placeholder_api_key").then(
       apiResponse => {
         new Chart(
           document.getElementById('acquisitions'),
@@ -48,36 +44,8 @@ import Chart from 'chart.js/auto';
         console.log(error);
       }
     )
-
-    // new Chart(canvas, {
-    //   type: 'line',
-    //   data: {
-    //     labels: [],
-    //     datasets: []
-    //   },
-    //   options: {
-    //     elements: {
-    //       point: {
-    //         radius: 0
-    //       }
-    //     },
-    //     responsive: false,
-    //     title: {
-    //       display: true,
-    //       fontSize: 32,
-    //       text: 'Front-Month Futures Contract Price Change [%]'
-    //     }
-    //   }
-    // });
   });
 })();
-
-// datasets: [
-//   {
-//     label: 'Acquisitions by year',
-//     data: data.map(row => row.count)
-//   },
-// ]
 
 function getCountryDatasets(apiResponse, countries) {
   let countryDataset, countryRecords;
@@ -114,3 +82,25 @@ function getYears(apiResponse) {
     record["DateTime"].slice(0, 4)
   ))
 }
+
+
+// new Chart(canvas, {
+//   type: 'line',
+//   data: {
+//     labels: [],
+//     datasets: []
+//   },
+//   options: {
+//     elements: {
+//       point: {
+//         radius: 0
+//       }
+//     },
+//     responsive: false,
+//     title: {
+//       display: true,
+//       fontSize: 32,
+//       text: 'Front-Month Futures Contract Price Change [%]'
+//     }
+//   }
+// });
