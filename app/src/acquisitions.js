@@ -2,12 +2,11 @@ import Chart from 'chart.js/auto';
 
 (async function() {
   document.addEventListener("DOMContentLoaded", () => {
-    // Free accounts only support Mexico, Sweden, Thailand, New Zealand
+    // Free accounts only support Mexico, New Zealand, Sweden, and Thailand
     const countries = ["Mexico", "New Zealand", "Sweden", "Thailand"];
 
     // ToDo:
     // Move API KEY to ENV?
-    // Handle API error
     // Refactor maybe into separate files
     // Tests?
 
@@ -47,8 +46,9 @@ import Chart from 'chart.js/auto';
       }
     ).catch(
       error => {
-        console.log("API Error!");
-        console.log(error);
+        console.error(error);
+        const errorDisplayElement = document.getElementById('error-message');
+        errorDisplayElement.innerHTML = `${error}`;
       }
     )
   });
