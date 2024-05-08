@@ -14,7 +14,6 @@ import {
 
     // ToDo:
     // Move API KEY to ENV?
-    // Tests?
 
     // fetchPopulationData(countries.join(", "), "placeholder_api_key").then(
       apiResponse => {
